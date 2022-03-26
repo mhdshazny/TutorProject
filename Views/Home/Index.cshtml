@@ -1,0 +1,56 @@
+﻿@model IEnumerable<TutorProject.Models.StudentModel>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<hr />
+<div class="container-fluid">
+    <div class="row text-center">
+        <div class="col mb-5">
+            <a type="submit" class="btn btn-primary" name="Create" asp-action="Create" asp-controller="Home">Create New</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg">
+            <table class="table table-responsive-lg" id="PageTable1">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(x => x.Name)</th>
+                        <th>@Html.DisplayNameFor(x => x.Email)</th>
+                        <th>@Html.DisplayNameFor(x => x.Address)</th>
+                        <th>@Html.DisplayNameFor(x => x.NIC)</th>
+                        <th>@Html.DisplayNameFor(x => x.Gender)</th>
+                        <th>@Html.DisplayNameFor(x => x.DOB)</th>
+                        <th>@Html.DisplayNameFor(x => x.Status)</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>    
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem=>item.Name)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Email)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Address)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.NIC)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Gender)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.DOB)</td>
+                            <td>@Html.DisplayFor(modelItem=>item.Status)</td>
+                            <td>
+                                <a href="#" class="btn btn-primary">View</a>
+                                <a href="#" class="btn btn-secondary">Edit</a>
+                                <a href="#" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>    
+            </table>
+        </div>
+    </div>
+</div>
